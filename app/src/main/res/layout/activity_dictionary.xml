@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<!--<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"-->
+    <!--android:layout_width="fill_parent"-->
+    <!--android:layout_height="fill_parent"-->
+    <!--android:id="@+id/scrollojt"-->
+    <!--android:fillViewport="true" >-->
+
+    <!--<RelativeLayout-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content" >-->
+
+
+
+        <!--<ExpandableListView-->
+            <!--android:id="@+id/listDictionary"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:background="#B29090" >-->
+        <!--</ExpandableListView>-->
+
+
+
+        <!--<ExpandableListView-->
+            <!--android:id="@+id/listDictionaryBottom"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_below="@+id/listDictionary"-->
+            <!--android:background="#4A9C67" >-->
+        <!--</ExpandableListView>-->
+    <!--</RelativeLayout>-->
+<!--</ScrollView>-->
+
+
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:fillViewport="true" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="0dip" >
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:text="New words:" />
+
+        <ExpandableListView
+            android:id="@+id/listDictionary"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dip"
+            android:background="#B29090"
+            android:groupIndicator="@android:color/transparent"
+            >
+        </ExpandableListView>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dip"
+            android:gravity="center_vertical"
+            android:text="Learned words:" />
+
+        <ExpandableListView
+            android:id="@+id/listDictionaryBottom"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dip"
+            android:background="#4A9C67"
+            android:groupIndicator="@android:color/transparent"
+            >
+        </ExpandableListView>
+    </LinearLayout>
+
+</ScrollView>
+
+
+
