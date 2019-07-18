@@ -36,6 +36,14 @@ public class DictionaryCall {
 //
 //    }
 
+//    public static Integer i1=1;
+//    public Integer i2=1;
+//
+//    public static class DictionaryCallInner {
+//        public Integer i1=DictionaryCall.i1;
+//        //Integer i2=DictionaryCall.i2;
+//
+//    }
 
     public DictionaryCall(MainActivity mainActivity){
         initRetrofit();
@@ -52,7 +60,7 @@ public class DictionaryCall {
     }
 
 
-    // посылаем запрос к yandex
+    // посылаем запрос к yandex ("en-ru", "spade", "en")
     public void callDictionary(String lang, final String text, String ui){
 //        String[] translation1;
         //translationResult=new String[0];
@@ -119,18 +127,18 @@ public class DictionaryCall {
     // классы для разбора ответа от yandex
     private class Message {
         //private Element[] head;
-        private Element[] def;
+        private Element[] def; // список частей речи (pos) (рус)
     }
     private class Element {
-        private String text;
-        private String num;
-        private String pos;
-        private String gen;
-        private Element[] syn;
-        private Element[] mean;
-        private Element[] ex;
-        private String ts;
-        private Element[] tr;
+        private String text; // "text": "spade",
+        private String num; //
+        private String pos; // часть речи "pos": "noun"
+        private String gen; // "gen": "ж",
+        private Element[] syn; // синонимы (рус)
+        private Element[] mean; // синонимы (англ)
+        private Element[] ex; // использование
+        private String ts; // транскрипция "ts": "speɪd",
+        private Element[] tr; // список переводов для данной части речи (pos) (рус)
     }
 
     private interface MessagesApi {

@@ -69,6 +69,10 @@ public class MainActivity extends AppCompatActivity  {
 //    protected void onRequestPermissionResult {}
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+//        DictionaryCall dictionaryCall1 = new DictionaryCall(this);
+//        DictionaryCall.DictionaryCallInner dci = new DictionaryCall.DictionaryCallInner();
+//        dci.i1 = dictionaryCall.i2;
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
@@ -294,6 +298,7 @@ public class MainActivity extends AppCompatActivity  {
             // обработка нажатия на span
             public void onClick(View widget) {
                 Log.d("tapped on:", mWord);
+
                 ClickableSpan[] clickableSpans = spans.getSpans(0, spans.length(), ClickableSpan.class);
                 spans.setSpan(new BackgroundColorSpan(initTextBackColor), prevSpanStart, prevSpanEnd, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
                 spans.setSpan(new BackgroundColorSpan(Color.RED), spans.getSpanStart(this), spans.getSpanEnd(this), Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
@@ -302,6 +307,7 @@ public class MainActivity extends AppCompatActivity  {
                 dictionaryCall.callDictionary("en-ru", mWord, "en");
 //                String[] params = {"en-ru", mWord, "en"}; //new String[3]("","","");
 //                new SendDictionaryCall().execute(params);
+
             }
 
             // начальное состояние span-а
